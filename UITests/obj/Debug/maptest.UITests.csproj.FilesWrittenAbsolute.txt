@@ -1,7 +1,7 @@
-/Users/bert/Projects/bertbeck/maptest/UITests/obj/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
-/Users/bert/Projects/bertbeck/maptest/UITests/bin/Debug/maptest.UITests.dll.mdb
-/Users/bert/Projects/bertbeck/maptest/UITests/bin/Debug/maptest.UITests.dll
-/Users/bert/Projects/bertbeck/maptest/UITests/obj/Debug/maptest.UITests.dll
-/Users/bert/Projects/bertbeck/maptest/UITests/obj/Debug/maptest.UITests.dll.mdb
-/Users/bert/Projects/bertbeck/maptest/UITests/bin/Debug/nunit.framework.dll
-/Users/bert/Projects/bertbeck/maptest/UITests/bin/Debug/Xamarin.UITest.dll
+/Users/esensemac10/maptest/UITests/obj/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/Users/esensemac10/maptest/UITests/bin/Debug/maptest.UITests.dll.mdb
+/Users/esensemac10/maptest/UITests/bin/Debug/maptest.UITests.dll
+/Users/esensemac10/maptest/UITests/obj/Debug/maptest.UITests.dll
+/Users/esensemac10/maptest/UITests/obj/Debug/maptest.UITests.dll.mdb
+/Users/esensemac10/maptest/UITests/bin/Debug/nunit.framework.dll
+/Users/esensemac10/maptest/UITests/bin/Debug/Xamarin.UITest.dll

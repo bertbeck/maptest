@@ -1,23 +1,11 @@
 ﻿<Properties StartupItem="iOS/maptest.iOS.csproj" RefactoringSettings.EnableRefactorings="True" GitUserInfo="UsingGIT">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.Bert's iPad" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="maptest/maptest.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.IPhone6.8.4" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="maptest/SwipeToDelete.xaml.cs">
     <Files>
-      <File FileName="maptest/maptest.cs" Line="12" Column="13" />
-      <File FileName="maptest/MainMapPage.cs" Line="85" Column="1" />
-      <File FileName="iOS/AppDelegate.cs" Line="26" Column="15" />
-      <File FileName="../muuv.git/Android/El.Droid/FileIO.cs" Line="1" Column="1" />
-      <File FileName="iOS/util.cs" Line="1" Column="1" />
-      <File FileName="../muuv.git/El.iOs/AppDelegate.cs" Line="1" Column="1" />
-      <File FileName="../muuv.git/El.Mobile/Pages/Map/MainMapPage.cs" Line="1" Column="1" />
-      <File FileName="iOS/Info.plist" />
-      <File FileName="Droid/Properties/AndroidManifest.xml" Line="1" Column="1" />
-      <File FileName="../muuv.git/Android/El.Droid/Properties/AndroidManifest.xml" Line="1" Column="1" />
-      <File FileName="Droid/MainActivity.cs" Line="23" Column="36" />
-      <File FileName="../muuv.git/Android/El.Droid/MainActivity.cs" Line="1" Column="1" />
-      <File FileName="maptest/SearchPage.cs" Line="1" Column="1" />
-      <File FileName="maptest/Toolbar.cs" Line="56" Column="13" />
-      <File FileName="maptest/WallPage.cs" Line="1" Column="1" />
-      <File FileName="maptest/Messages.cs" Line="9" Column="28" />
+      <File FileName="maptest/SwipeToDelete.xaml" Line="1" Column="1" />
+      <File FileName="maptest/SwipeToDelete.xaml.cs" Line="21" Column="23" />
+      <File FileName="maptest/MainMapPage.cs" Line="1" Column="1" />
+      <File FileName="maptest/maptest.cs" Line="9" Column="13" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

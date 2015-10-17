@@ -9,9 +9,11 @@ namespace maptest
         public App ()
         {
             // The root page of your application
+			//By Parag
+			MainPage = new SwipeToDelete();
 
-       
-            MainPage = new NavigationPage(new MainMapPage ());
+            //MainPage = new NavigationPage(new MainMapPage ());
+
 //            MainPage = new ContentPage {
 //                Content = new StackLayout {
 //                    VerticalOptions = LayoutOptions.Center,

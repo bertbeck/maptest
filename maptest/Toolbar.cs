@@ -104,6 +104,7 @@ namespace maptest
                 img.HorizontalOptions = LayoutOptions.EndAndExpand;
                 img.VerticalOptions = LayoutOptions.CenterAndExpand;
                 img.GestureRecognizers.Add (new TapGestureRecognizer (OnTapGestureRecognizerTapped));
+
                 view.HorizontalOptions = LayoutOptions.EndAndExpand;
                 view.VerticalOptions = LayoutOptions.CenterAndExpand;
                 view.Padding = new Thickness (0, 0, 0, 0);
@@ -188,6 +189,7 @@ namespace maptest
             parent.BackgroundColor = Color.Red; 
             ToolbarItem item = toolbarItems [img];
             item.Command.Execute (null);
+			parent.BackgroundColor = Color.Gray;
             //Console.WriteLine ("button click for: " + item.Text);
 
         }

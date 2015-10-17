@@ -38,6 +38,11 @@
     <Compile Include="WallPage.cs" />
     <Compile Include="Messages.cs" />
     <Compile Include="TestPage.cs" />
+    <Compile Include="IStepCounter.cs" />
+    <Compile Include="SwipeToDelete.xaml.cs">
+      <DependentUpon>SwipeToDelete.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ClsProfileData.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.1.5.0.6446\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.1.5.0.6446\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
@@ -76,5 +81,15 @@
     <None Include="manifest.plist">
       <DependentUpon>el-beta.html</DependentUpon>
     </None>
+    <None Include="Resources\320x480.png" />
+    <None Include="Resources\1024.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="SwipeToDelete.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
   </ItemGroup>
 </Project>
