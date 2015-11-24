@@ -7,6 +7,12 @@ using maptest.iOS;
 
 [assembly: Dependency (typeof (Util))]
 
+
+//
+//  Dependency: IUTIL
+//  Provide location management services
+//
+
 namespace maptest.iOS
 {
     public class Util : maptest.IUtil
@@ -26,11 +32,7 @@ namespace maptest.iOS
             if (UIDevice.CurrentDevice.CheckSystemVersion(8,0))
                 manager.RequestWhenInUseAuthorization();
         }
-
-
     }
-
-
 
 }
 

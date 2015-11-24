@@ -1,4 +1,7 @@
-﻿
+﻿//
+//  Maptest: Show basic map with toolbar for Andorid and IOS using Xamarin Forms
+//
+
 using System;
 using System.IO;
 using System.Collections.Generic;
@@ -11,14 +14,14 @@ using Xamarin.Forms.Maps;
 //using XLabs.Forms.Controls;
 using XLabs.Platform.Device;
 using XLabs.Platform.Services.Geolocation;
-
 using Toasts.Forms.Plugin.Abstractions;
-
-
 using XLabs.Ioc;
 
 namespace maptest
 {
+
+	//  Map page is a Xamarin Forms Content Page
+
     public class MainMapPage : ContentPage
     {
 
@@ -71,8 +74,10 @@ namespace maptest
 
         public MainMapPage()
 		{
+			// Use our own Navigation
             NavigationPage.SetHasNavigationBar(this, false);
 
+			//  Create a map
             var map = new Map(
                 MapSpan.FromCenterAndRadius(
                     new Xamarin.Forms.Maps.Position(37,-122), Distance.FromMiles(0.3))) {
@@ -81,13 +86,11 @@ namespace maptest
             };
             _map = map;
 
-            //View toolbar = CreateTopMenu();
+           //  Create a custom toolbar
             View toolbar = new Toolbar(this);
-
-            //toolbar.WidthRequest = 1000;
-            //toolbar.HeightRequest = 50;
             toolbar.BackgroundColor = Color.White;
 
+			//  Create a test button
             Button b = new Button { Text = "GetPosition" };
 
             b.Clicked += (sender, ea) => GetPosition1 ();
@@ -127,9 +130,12 @@ namespace maptest
             #endif
         }
            
-        private async Task GetPosition1()
-        {
 
+		//  Get users current location
+		//  Location services is in a dependency service
+
+        private async Task GetPosition1()
+		{
             var service = DependencyService.Get<IUtil> ();
             service.EnableLocationServices();
 
@@ -141,14 +147,15 @@ namespace maptest
                 PositionLongitude = string.Empty;
                 IsBusy = true;
 
+				//  Log if debug enabled
+
                 if (DEBUG)
 				{
 					var notificator = DependencyService.Get<IToastNotificator>();
 					bool tapped = await notificator.Notify(ToastNotificationType.Info, 
 					"GetPosition", "Getting Position", TimeSpan.FromSeconds(2));
 				}
-				
-					
+
 				//  Get current position
                 await Geolocator.GetPositionAsync(timeout: 10000, cancelToken: _cancelSource.Token, includeHeading: false)
                     .ContinueWith(t => UpdatePosition(t.Result));
@@ -166,15 +173,17 @@ namespace maptest
         }
 
         int counter = 1;
+
+		//  Move map to position passed in
+
         void UpdatePosition(XLabs.Platform.Services.Geolocation.Position result)
-            {
-
-
-            //  Show on map - needs code made to work
-  
+		{
+            //  Show location on map
             try
-                            {
+            {
                 var position = new Xamarin.Forms.Maps.Position(result.Latitude, result.Longitude);
+
+				// Have to run it on UI thread
 
                 Device.BeginInvokeOnMainThread( () =>
                                         {
@@ -191,7 +200,8 @@ namespace maptest
 //                                                }
                                                 //else
                                                 {
-                                position = new Xamarin.Forms.Maps.Position (position.Latitude + .01*counter++, position.Longitude);
+													//  Create a pin with location passed in						
+                                					position = new Xamarin.Forms.Maps.Position (position.Latitude + .01*counter++, position.Longitude);
                                                     _map.MoveToRegion(MapSpan.FromCenterAndRadius(position, Distance.FromMiles(1)));
                                                    var pin = new Pin
                                                     {
@@ -222,6 +232,7 @@ namespace maptest
            
             }
             
+		//  Dependency service for geolocation
         private IGeolocator Geolocator
         {
             get
@@ -238,6 +249,7 @@ namespace maptest
             }
         }
 
+		//  Error reporting for geolocation error
         private async void OnListeningError(object sender, PositionErrorEventArgs e)
         {
             if (DEBUG) {
@@ -247,14 +259,17 @@ namespace maptest
             }
         }
 
+		//  Track position
         private void OnPositionChanged(object sender, PositionEventArgs e)
         {
         }
+
         protected override bool OnBackButtonPressed()
         {
             return true;
         }
 
+		//  Page is going out of scope
         protected override void OnDisappearing()
         {
             BindingContext = null;
@@ -265,6 +280,7 @@ namespace maptest
             
     }
 
+	//  Interface to dependency service
     public interface IUtil
     {
         void EnableLocationServices();

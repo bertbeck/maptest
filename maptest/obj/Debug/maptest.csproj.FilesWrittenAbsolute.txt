@@ -12,3 +12,13 @@
 /Users/bert/Projects/bertbeck/maptest/maptest/bin/Debug/ExifLib.dll
 /Users/bert/Projects/bertbeck/maptest/maptest/bin/Debug/XLabs.Core.dll
 /Users/bert/Projects/bertbeck/maptest/maptest/bin/Debug/XLabs.Platform.dll
+/Users/bert/Projects/bertbeck/maptest/maptest/bin/Debug/mscorlib.dll
+/Users/bert/Projects/bertbeck/maptest/maptest/bin/Debug/System.Core.dll
+/Users/bert/Projects/bertbeck/maptest/maptest/bin/Debug/System.dll
+/Users/bert/Projects/bertbeck/maptest/maptest/bin/Debug/System.Linq.Queryable.dll
+/Users/bert/Projects/bertbeck/maptest/maptest/bin/Debug/System.Diagnostics.Tools.dll
+/Users/bert/Projects/bertbeck/maptest/maptest/bin/Debug/System.ComponentModel.EventBasedAsync.dll
+/Users/bert/Projects/bertbeck/maptest/maptest/bin/Debug/System.Net.Primitives.dll
+/Users/bert/Projects/bertbeck/maptest/maptest/bin/Debug/System.Net.Requests.dll
+/Users/bert/Projects/bertbeck/maptest/maptest/bin/Debug/System.Net.NetworkInformation.dll
+/Users/bert/Projects/bertbeck/maptest/maptest/bin/Debug/System.Text.RegularExpressions.dll

@@ -10,20 +10,30 @@ using System.Globalization;
 using System.Threading;
 using Toasts.Forms.Plugin.Abstractions;
 
-class Config {public bool Debug = false;}
+//
+//  Test page for "Find Friends" function.
+//  Allow user to search for friends based on sports type and proximity
+//
 
 
 
 namespace Test
 {
+
+	class Config {public bool Debug = false;}
+
+
     public class TestPage : ContentPage
     {
 
         public TestPage()
         {
+			//  Create toolbar
             View toolbar = new maptest.Toolbar(this);
             SearchResults searchResults = new SearchResults ();
 
+
+			//  Create header for the page
                 var _header1 = new Label
                 {
                     Text = "   FIND FRIENDS   ",
@@ -82,6 +92,7 @@ namespace Test
             };
 
 
+			//  Create composite page - toolbar + header + search results listview
 
                 this.Content = new ContentView
                 {
@@ -105,6 +116,11 @@ namespace Test
 
         }
         
+
+	//
+	//  This class handles the search for friends function
+	//  It creates a listview of results that are returned to the caller.
+	//
 
     public class SearchResults
     {
@@ -218,6 +234,8 @@ namespace Test
         }
     }
 
+
+	//  View models
 
     public class SearchResultsModel
     {

@@ -1,6 +1,9 @@
 ﻿using System;
-
 using Xamarin.Forms;
+
+//
+//  Stub page for search
+//
 
 namespace maptest
 {

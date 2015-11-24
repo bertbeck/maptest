@@ -2,6 +2,12 @@
 using Xamarin.Forms;
 using System.Collections.Generic;
 
+//
+//  This code creates a custom toolbar that is used in place of the standard navigation toolbar
+//  All standard navigation pages use this toolbar.
+//
+
+
 namespace maptest
 {
     public class Toolbar : ContentView
@@ -21,11 +27,14 @@ namespace maptest
 
         public Toolbar(ContentPage page)
         {
+			// Use cached toolbar if possible
             if (_toolbar != null) {
                 Content = _toolbar.Content;
                 return;
             }
 
+
+			//  Create menu for toolbar
             topMenuList = new List<ToolbarItem> ();
             topMenu = new StackLayout {BackgroundColor = Color.White, Orientation = StackOrientation.Horizontal, HorizontalOptions=LayoutOptions.FillAndExpand, Padding = new Thickness (0,0,10,0)};
 
@@ -65,6 +74,8 @@ namespace maptest
                 Command = new Command(() =>  {})
             });
 
+
+			//  Original code - now replaced
             #if ORIGINAL
             foreach (var item in topMenuList) {
 
@@ -91,6 +102,8 @@ namespace maptest
             }
             #endif
 
+
+			//  Create toolbar and images
 
             foreach (var item in topMenuList) {
 
@@ -162,6 +175,9 @@ namespace maptest
             topMenu.Spacing = 20;
             //topMenu.WidthRequest = 800;
 
+
+			//  Create toolbar panel
+
             BoxView box = new BoxView { HeightRequest = 4, BackgroundColor = Color.FromRgb(41,182,246), HorizontalOptions = LayoutOptions.FillAndExpand };
 
             StackLayout layout = new StackLayout {
@@ -181,6 +197,7 @@ namespace maptest
             //page.ToolbarItems.Add(refreshToolbarItem);
         }
 
+		//  Create tap handler
         void OnTapGestureRecognizerTapped(View sender, Object o) {
             var img = (Image)sender;
             ContentView parent = (ContentView)img.ParentView.ParentView;

@@ -11,6 +11,10 @@ using XLabs.Platform.Services.Geolocation;
 using XLabs.Forms;
 using CoreLocation;
 
+//
+// IOS Main entry point. We use FinishedLaunching to start the Forms App.
+//
+
 namespace maptest.iOS
 {
     [Register ("AppDelegate")]
@@ -18,8 +22,12 @@ namespace maptest.iOS
     {
         //CLLocationManager manager = new CLLocationManager();
 
+		//  Called when IOS has finished launching our app
+
         public override bool FinishedLaunching (UIApplication app, NSDictionary options)
         {
+			//  Set inversion of control components and initialize dependencies
+
             this.SetIoc();
             global::Xamarin.Forms.Forms.Init ();
             Xamarin.FormsMaps.Init();
@@ -30,10 +38,14 @@ namespace maptest.iOS
 			Xamarin.Calabash.Start();
             #endif
 
+			//  Load and run Forms App
             LoadApplication (new App ());
 
             return base.FinishedLaunching (app, options);
         }
+
+
+	//  Inversion of control setup
 
     private void SetIoc()
     {
@@ -45,6 +57,7 @@ namespace maptest.iOS
 
         var documents = app.AppDataDirectory;
 
+		// UNEEDED CONTROLS FOR TEST
         //resolverContainer.Register<IGeolocator, Geolocator>();
         //resolverContainer.Register<IEmailService, EmailService>();
         //resolverContainer.Register<IMediaPicker, MediaPicker>();
@@ -57,17 +70,10 @@ namespace maptest.iOS
         //resolverContainer.Register<IDevice>(t => AndroidDevice.CurrentDevice);
         //Resolver.SetResolver(resolverContainer.GetResolver());
 
-            Console.WriteLine ("Here");
-            Util util = new Util ();
-            util.EnableLocationServices ();
+		//  Startup location services
 
-
-
-            //manager.AuthorizationChanged += (sender, args) => {
-               // Console.WriteLine ("Authorization changed to: {0}", args.Status);
-            //};
-            //if (UIDevice.CurrentDevice.CheckSystemVersion(8,0))
-            //    manager.RequestWhenInUseAuthorization();
+        Util util = new Util ();
+        util.EnableLocationServices ();
 
     }
     }

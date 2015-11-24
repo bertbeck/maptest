@@ -8,9 +8,8 @@ namespace maptest
     {
         public App ()
         {
-            // The root page of your application
+            // The root page application
 
-       
             MainPage = new NavigationPage(new MainMapPage ());
 //            MainPage = new ContentPage {
 //                Content = new StackLayout {

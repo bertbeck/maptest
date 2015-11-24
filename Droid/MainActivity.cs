@@ -17,9 +17,11 @@ namespace maptest.Droid
         {
             base.OnCreate (bundle);
 
+			//  Initialize dependencies
             global::Xamarin.Forms.Forms.Init (this, bundle);
             global::Xamarin.FormsMaps.Init(this, bundle);
 
+			//  Load and run app
             LoadApplication (new App ());
         }
     }
